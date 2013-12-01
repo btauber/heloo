@@ -18,12 +18,13 @@ public class Hangman {
     /**
      //* @param args the command line arguments
      */
-    public String [] words = {"people","pizza"};
+    public String [] words = {"people","pizza","airplane"};
     public int outs = 0;
     public char guesses[];
     public char guess;
     public String theword;
     public int row = 0;
+    public String usedguess;    
     public boolean []usedAlpha = new boolean[26];
     public void start(){
         int number = new Random().nextInt(words.length);
@@ -38,6 +39,7 @@ public class Hangman {
         System.out.println("guess a letter");
         char guesss = scanner.next().charAt(0);
          guess = Character.toLowerCase(guesss);
+         usedguess += " " + Character.toString(guess);
         if(usedAlpha[guess - 'a'] == true){
            
             System.out.println("you have already picked " + guess);
@@ -50,7 +52,8 @@ public class Hangman {
         if(checkTheLetter()==false){
             outs++;
         }
-        System.out.println("you have guessed " + guess);
+        
+        System.out.println("you have guessed " + usedguess);
         
         
         }
@@ -80,8 +83,8 @@ public class Hangman {
         drawPerson();
     }
     public void drawGuesses(){
-       for(char klm : guesses){
-           System.out.print(klm +" ");
+       for(char whitespace : guesses){
+           System.out.print(whitespace +" ");
        }
             
         
