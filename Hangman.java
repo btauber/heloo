@@ -23,8 +23,7 @@ public class Hangman {
     public char guesses[];
     public char guess;
     public String theword;
-    public int row = 0;
-    public String usedguess;    
+    public int row = 0;    
     public boolean []usedAlpha = new boolean[26];
     public void start(){
         int number = new Random().nextInt(words.length);
@@ -39,7 +38,6 @@ public class Hangman {
         System.out.println("guess a letter");
         char guesss = scanner.next().charAt(0);
          guess = Character.toLowerCase(guesss);
-         usedguess += " " + Character.toString(guess);
         if(usedAlpha[guess - 'a'] == true){
            
             System.out.println("you have already picked " + guess);
@@ -52,12 +50,9 @@ public class Hangman {
         if(checkTheLetter()==false){
             outs++;
         }
-        
-        System.out.println("you have guessed " + usedguess);
-        
-        
+           
         }
-        System.out.println(theword);
+        System.out.println("the guessing word was " + theword);
     }
     public void checkTheGuess(){
         for(int i=0;i < theword.length(); i++){
@@ -86,11 +81,35 @@ public class Hangman {
        for(char whitespace : guesses){
            System.out.print(whitespace +" ");
        }
-            
+          System.out.print("Used letters are ");
+        for(char i = 0; i <usedAlpha.length;i++){
+            if(usedAlpha[i] == true){
+                
+                char c = (char) ('a'+i);
+                System.out.print(c);
+            }
+        }
+            System.out.println();  
         
     }
     public void drawPerson(){
         System.out.println("you have " + outs + " outs");
+        String newLine = System.getProperty("line.separator");
+        if(outs == 1){
+            System.out.println(" ______"+newLine+"|      |"+newLine+"|      |"+newLine+"|______|");
+        }if(outs == 2){
+            System.out.println(" ______"+newLine+"|    o |"+newLine+"|      |"+newLine+"|______|");
+        }if(outs == 3){
+            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|      |"+newLine+"|______|");
+        }if(outs == 4){
+            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|  ()  |"+newLine+"|______|");
+        }if(outs == 5){
+            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|  ()  |"+newLine+"|__<>__|");
+        }if(outs == 6){
+            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|  ()  |"+newLine+"|__<>__|"+newLine+"  ||  "+newLine+"  ||  ");
+        }if(outs == 7){
+            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|  ()  |"+newLine+"|__<>__|"+newLine+"  ||  "+newLine+"  ||  "+newLine+"*_______||       ");
+        }
     }
   
     
@@ -101,4 +120,28 @@ public class Hangman {
     }
     
 }
-    
+  /*
+           ______
+          | o  o |
+          |  ()  |
+          |__<>__|
+          "  ||  "
+     *_______||_______*
+            /||\
+           / || \
+          /  ||  \
+
+
+
+           ______
+          | o  o |
+          |  ()  |
+          |__<>__|
+          "  ||  "
+     "*_______||       "
+            /||\
+           / || \
+          /  ||  \
+
+
+*/ 
