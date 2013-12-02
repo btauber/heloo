@@ -96,19 +96,25 @@ public class Hangman {
         System.out.println("you have " + outs + " outs");
         String newLine = System.getProperty("line.separator");
         if(outs == 1){
-            System.out.println(" ______"+newLine+"|      |"+newLine+"|      |"+newLine+"|______|");
+            System.out.println("           ______"+newLine+"          |      |"+newLine+"          |      |"+newLine+"          |______|");
         }if(outs == 2){
-            System.out.println(" ______"+newLine+"|    o |"+newLine+"|      |"+newLine+"|______|");
+            System.out.println("           ______"+newLine+"          |    o |"+newLine+"          |      |"+newLine+"          |______|");
         }if(outs == 3){
-            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|      |"+newLine+"|______|");
+            System.out.println("           ______"+newLine+"          | o  o |"+newLine+"          |      |"+newLine+"          |______|");
         }if(outs == 4){
-            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|  ()  |"+newLine+"|______|");
+            System.out.println("           ______"+newLine+"          | o  o |"+newLine+"          |  ()  |"+newLine+"          |______|");
         }if(outs == 5){
-            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|  ()  |"+newLine+"|__<>__|");
+            System.out.println("           ______"+newLine+"          | o  o |"+newLine+"          |  ()  |"+newLine+"          |__<>__|");
         }if(outs == 6){
-            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|  ()  |"+newLine+"|__<>__|"+newLine+"  ||  "+newLine+"  ||  ");
+            System.out.println("           ______"+newLine+"          | o  o |"+newLine+"          |  ()  |"+newLine+"          |__<>__|"+newLine+"             ||  "+newLine+"             ||  ");
         }if(outs == 7){
-            System.out.println(" ______"+newLine+"| o  o |"+newLine+"|  ()  |"+newLine+"|__<>__|"+newLine+"  ||  "+newLine+"  ||  "+newLine+"*_______||       ");
+            System.out.println("           ______"+newLine+"          | o  o |"+newLine+"          |  ()  |"+newLine+"          |__<>__|"+newLine+"             ||  "+newLine+"             ||  "+newLine+"     *_______||");
+        }if(outs == 8){
+            System.out.println("           ______"+newLine+"          | o  o |"+newLine+"          |  ()  |"+newLine+"          |__<>__|"+newLine+"             ||  "+newLine+"             ||  "+newLine+"     *_______||_______*");
+        }if(outs == 9){
+            System.out.println("           ______"+newLine+"          | o  o |"+newLine+"          |  ()  |"+newLine+"          |__<>__|"+newLine+"             ||  "+newLine+"             ||  "+newLine+"     *_______||_______*"+newLine+"            /||"+newLine+"           / ||"+newLine+"          /  ||");
+        }if(outs == 10){
+            System.out.println("           ______"+newLine+"          | o  o |"+newLine+"          |  ()  |"+newLine+"          |__<>__|"+newLine+"             ||  "+newLine+"             ||  "+newLine+"     *_______||_______*"+newLine+"            /||\"+ newLine+"           / || \"+newLine+"          /  ||  \");
         }
     }
   
