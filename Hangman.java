@@ -33,7 +33,7 @@ public class Hangman {
         Arrays.fill(guesses,underline);
        
         Scanner scanner = new Scanner(System.in);
-        while(outs < 10 && row != theword.length()){
+        while(outs < 10 ){
         drawScreen();
         System.out.println("guess a letter");
         char guesss = scanner.next().charAt(0);
@@ -50,7 +50,10 @@ public class Hangman {
         if(checkTheLetter()==false){
             outs++;
         }
-           
+           if(row == theword.length()){
+               System.out.println("you won");
+               break;
+           }
         }
         System.out.println("the guessing word was " + theword);
     }
