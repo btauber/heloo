@@ -1,3 +1,4 @@
+
 import java.util.Arrays;
 
 public class IntVector {
@@ -31,7 +32,7 @@ public class IntVector {
 
            //if(element == 0);
         //System.out.println(element);
-        System.out.println(myarray.length);
+       // System.out.println(myarray.length);
 
     }
 
