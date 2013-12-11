@@ -24,25 +24,24 @@ public class Mygradebook {
     }
 
     public void addGrades(Student nameOfStudent) {
-          for(;;){
+        String more = "y";
+          while(more.equalsIgnoreCase("y")){
         System.out.println("Add grades for " + nameOfStudent.getName());
         int newGrade = scanner.nextInt();
         nameOfStudent.addGrade(newGrade);
-        System.out.println("More Grades? type true or false");
-        if(scanner.nextBoolean()){
-            continue;
-        }else{
-            break;
-        }
+        System.out.println("More Grades? y/n");
+        more = scanner.next();
+        System.out.println();
+        
           }
     }
 
     public void getMeOut(String indname) {
         int y = 0;
         for (Student Indev : myStudent) {
-            if (Indev.getName().equals(indname)) {
+            if (Indev.getName().equalsIgnoreCase(indname)) {
                 addGrades(Indev);
-                y++;
+               y++;
                    break;
             }
           
@@ -69,7 +68,7 @@ public class Mygradebook {
 
     public void theControler() {
 
-        System.out.println("Welcome to our Grade Program" + newLine + "To add Studen type a " + newLine + "To add Grades to exiting student type b" + newLine + "To look up grades from exiting student Type c ");
+        System.out.println("Welcome to our Grade Program" + newLine + "To add Student type a " + newLine + "To add Grades to exiting student type b" + newLine + "To look up grades from exiting student Type c ");
         String in = scanner.nextLine();
         switch (in) {
             case "a":
@@ -87,6 +86,6 @@ public class Mygradebook {
                 String ind = scanner.nextLine();
                 getout(ind);
                 break;
-        }
+        };
     }
 }
