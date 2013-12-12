@@ -28,10 +28,10 @@ public class Mygradebook {
           while(more.equalsIgnoreCase("y")){
         System.out.println("Add grades for " + nameOfStudent.getName());
         int newGrade = scanner.nextInt();
+        scanner.nextLine();
         nameOfStudent.addGrade(newGrade);
         System.out.println("More Grades? y/n");
-        more = scanner.next();
-        System.out.println();
+        more = scanner.nextLine();
         
           }
     }
@@ -86,6 +86,6 @@ public class Mygradebook {
                 String ind = scanner.nextLine();
                 getout(ind);
                 break;
-        };
+        }
     }
 }

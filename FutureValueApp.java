@@ -1,4 +1,5 @@
 
+
 import java.util.Scanner;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -24,10 +25,12 @@ public class FutureValueApp {
          NumberFormat currency = NumberFormat.getCurrencyInstance();
          System.out.println("Future Value:       " + currency.format(futureValue) + "\n");
            
-         
+         scanner.nextLine();
          System.out.println("Continue? (y/n) : ");
+         
          choice = scanner.nextLine();
-         System.out.println("h");
+         
+        
          
      }
     
