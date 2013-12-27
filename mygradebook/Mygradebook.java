@@ -15,12 +15,13 @@ public class Mygradebook {
         Mygradebook mygradebook = new Mygradebook();
         for (;;) {
             mygradebook.theControler();
+            
         }
     }
 
     public void addarray(Student nameOfStudent) {
         myStudent.add(nameOfStudent);
-
+       
     }
 
     public void addGrades(Student nameOfStudent) {
@@ -41,8 +42,10 @@ public class Mygradebook {
         for (Student Indev : myStudent) {
             if (Indev.getName().equalsIgnoreCase(indname)) {
                 addGrades(Indev);
+               
                y++;
                    break;
+                  
             }
           
         }
