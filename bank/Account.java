@@ -1,7 +1,9 @@
 
 package bank;
 
-public abstract class Account {
+import java.text.NumberFormat;
+
+ public abstract class Account implements Printable  {
     protected String name;
     protected double balance;
     
@@ -9,11 +11,12 @@ public abstract class Account {
         this.name = name;
         this.balance = balance;
     }
-    abstract void endOfMonth();
+   abstract void endOfMonth();
         
     
     public String getBalance(){
-        String prompt = name + " Balance is:  "+balance;
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        String prompt = name + " Balance is:  "+ currency.format(balance);
         return prompt ;
     }
     public void addTransaction(double amount,String plusOrMinus ){
@@ -21,6 +24,11 @@ public abstract class Account {
         balance += amount;
         else
         balance -= amount;
+    }
+    public void print(Printable acct){
+        Class c = acct.getClass();
+        
+       System.out.println("Account   :"+ c.getSimpleName() + "\n My Name:    "+name+"\n My Balance is:    "+balance);
     }
     
 }
